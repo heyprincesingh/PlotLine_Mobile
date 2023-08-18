@@ -1,5 +1,7 @@
+import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:plotline_mobile/view/buttonScreen.dart';
 
 class formScreen extends StatelessWidget {
   const formScreen({super.key});
@@ -9,7 +11,7 @@ class formScreen extends StatelessWidget {
     final ValueNotifier<String> selectedOption = ValueNotifier('Button 1');
 
     return Padding(
-      padding: const EdgeInsets.only(left: 20,right: 20,top: 20),
+      padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
       child: SingleChildScrollView(
         physics: const ScrollPhysics(),
         child: Column(
@@ -72,8 +74,11 @@ class formScreen extends StatelessWidget {
               ),
             ),
             screenText("Tooltip text"),
-            screenInput(context, MediaQuery.of(context).size.width - 40,
-                TextInputType.text),
+            screenInput(
+              context,
+              MediaQuery.of(context).size.width - 40,
+              TextInputType.text,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -103,11 +108,17 @@ class formScreen extends StatelessWidget {
               ],
             ),
             screenText("Text Colour"),
-            screenInput(context, MediaQuery.of(context).size.width - 40,
-                TextInputType.text),
+            screenInput(
+              context,
+              MediaQuery.of(context).size.width - 40,
+              TextInputType.text,
+            ),
             screenText("Background Colour"),
-            screenInput(context, MediaQuery.of(context).size.width - 40,
-                TextInputType.text),
+            screenInput(
+              context,
+              MediaQuery.of(context).size.width - 40,
+              TextInputType.text,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -184,7 +195,7 @@ class formScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: ()=> Get.to(buttonScreen()),
                     child: Text(
                       "Render Tooltip",
                       style: TextStyle(
@@ -202,7 +213,8 @@ class formScreen extends StatelessWidget {
     );
   }
 
-  Container screenInput(BuildContext context, double width, TextInputType type) {
+  Container screenInput(
+      BuildContext context, double width, TextInputType type) {
     return Container(
       height: 50,
       width: width,
