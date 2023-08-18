@@ -2,13 +2,15 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:plotline_mobile/view/buttonScreen.dart';
+import 'package:plotline_mobile/model/saveDataModel.dart';
+import 'package:plotline_mobile/controller/formScreenController.dart';
 
 class formScreen extends StatelessWidget {
   const formScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final ValueNotifier<String> selectedOption = ValueNotifier('Button 1');
+    final controller = Get.put(formScreenController());
 
     return Padding(
       padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
@@ -31,7 +33,7 @@ class formScreen extends StatelessWidget {
                 ),
               ),
               child: ValueListenableBuilder<String>(
-                valueListenable: selectedOption,
+                valueListenable: controller.selectedOption.value,
                 builder: (context, value, child) {
                   return Padding(
                     padding: const EdgeInsets.only(left: 14, right: 14),
@@ -47,7 +49,7 @@ class formScreen extends StatelessWidget {
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                       dropdownColor: Color(0xfff5f5f5),
                       onChanged: (a) {
-                        selectedOption.value = a.toString();
+                        controller.selectedOption.value.value = a.toString();
                       },
                       items: <String>[
                         'Button 1',
@@ -74,11 +76,8 @@ class formScreen extends StatelessWidget {
               ),
             ),
             screenText("Tooltip text"),
-            screenInput(
-              context,
-              MediaQuery.of(context).size.width - 40,
-              TextInputType.text,
-            ),
+            screenInput(context, MediaQuery.of(context).size.width - 40,
+                TextInputType.text, controller.tooltipTextController.value),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -89,9 +88,11 @@ class formScreen extends StatelessWidget {
                   children: [
                     screenText("Text Size"),
                     screenInput(
-                        context,
-                        MediaQuery.of(context).size.width / 2 - 40,
-                        TextInputType.number),
+                      context,
+                      MediaQuery.of(context).size.width / 2 - 40,
+                      TextInputType.number,
+                      controller.textSizeController.value,
+                    ),
                   ],
                 ),
                 Column(
@@ -100,9 +101,11 @@ class formScreen extends StatelessWidget {
                   children: [
                     screenText("Padding"),
                     screenInput(
-                        context,
-                        MediaQuery.of(context).size.width / 2 - 40,
-                        TextInputType.number),
+                      context,
+                      MediaQuery.of(context).size.width / 2 - 40,
+                      TextInputType.number,
+                      controller.paddingController.value,
+                    ),
                   ],
                 )
               ],
@@ -112,12 +115,14 @@ class formScreen extends StatelessWidget {
               context,
               MediaQuery.of(context).size.width - 40,
               TextInputType.text,
+              controller.textColorController.value,
             ),
             screenText("Background Colour"),
             screenInput(
               context,
               MediaQuery.of(context).size.width - 40,
               TextInputType.text,
+              controller.backgroundColorController.value,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -129,9 +134,11 @@ class formScreen extends StatelessWidget {
                   children: [
                     screenText("Corner Radius"),
                     screenInput(
-                        context,
-                        MediaQuery.of(context).size.width / 2 - 40,
-                        TextInputType.number),
+                      context,
+                      MediaQuery.of(context).size.width / 2 - 40,
+                      TextInputType.number,
+                      controller.cornerRadiusController.value,
+                    ),
                   ],
                 ),
                 Column(
@@ -140,9 +147,11 @@ class formScreen extends StatelessWidget {
                   children: [
                     screenText("Tooltip width"),
                     screenInput(
-                        context,
-                        MediaQuery.of(context).size.width / 2 - 40,
-                        TextInputType.number),
+                      context,
+                      MediaQuery.of(context).size.width / 2 - 40,
+                      TextInputType.number,
+                      controller.tooltipWidthController.value,
+                    ),
                   ],
                 )
               ],
@@ -157,9 +166,11 @@ class formScreen extends StatelessWidget {
                   children: [
                     screenText("Arrow width"),
                     screenInput(
-                        context,
-                        MediaQuery.of(context).size.width / 2 - 40,
-                        TextInputType.number),
+                      context,
+                      MediaQuery.of(context).size.width / 2 - 40,
+                      TextInputType.number,
+                      controller.arrowWidthController.value,
+                    ),
                   ],
                 ),
                 Column(
@@ -168,9 +179,11 @@ class formScreen extends StatelessWidget {
                   children: [
                     screenText("Arrow height"),
                     screenInput(
-                        context,
-                        MediaQuery.of(context).size.width / 2 - 40,
-                        TextInputType.number),
+                      context,
+                      MediaQuery.of(context).size.width / 2 - 40,
+                      TextInputType.number,
+                      controller.arrowHeightController.value,
+                    ),
                   ],
                 )
               ],
@@ -195,7 +208,21 @@ class formScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    onPressed: ()=> Get.to(buttonScreen()),
+                    onPressed: () {
+                      final myformData = MyFormData(
+                        selectedOption: controller.selectedOption.value.value,
+                        tooltipText: controller.tooltipTextController.value.text,
+                        textSize: double.parse(controller.textSizeController.value.text),
+                        padding: double.parse(controller.paddingController.value.text),
+                        textColor: controller.textColorController.value.text,
+                        backgroundColor: controller.backgroundColorController.value.text,
+                        cornerRadius: double.parse(controller.cornerRadiusController.value.text),
+                        tooltipWidth: double.parse(controller.tooltipWidthController.value.text),
+                        arrowWidth: double.parse(controller.arrowWidthController.value.text),
+                        arrowHeight: double.parse(controller.arrowHeightController.value.text),
+                      );
+                      controller.saveFormData(myformData);
+                    },
                     child: Text(
                       "Render Tooltip",
                       style: TextStyle(
@@ -213,8 +240,8 @@ class formScreen extends StatelessWidget {
     );
   }
 
-  Container screenInput(
-      BuildContext context, double width, TextInputType type) {
+  Container screenInput(BuildContext context, double width, TextInputType type,
+      TextEditingController controller) {
     return Container(
       height: 50,
       width: width,
@@ -229,6 +256,7 @@ class formScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.only(left: 14, right: 14),
           child: TextFormField(
+            controller: controller,
             cursorColor: Colors.black,
             maxLines: 1,
             minLines: 1,
