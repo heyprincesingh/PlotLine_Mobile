@@ -1,8 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'dart:convert';
-import 'package:plotline_mobile/model/saveDataModel.dart';
-import 'package:plotline_mobile/view/buttonScreen.dart';
+import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class formScreenController extends GetxController{
@@ -17,28 +14,12 @@ class formScreenController extends GetxController{
   Rx<TextEditingController> arrowWidthController = TextEditingController().obs;
   Rx<TextEditingController> arrowHeightController = TextEditingController().obs;
 
-  @override
-  void onInit() {
-    // TODO: implement onInit
-    super.onInit();
-    getFormData();
-  }
 
 
-  void saveFormData(MyFormData formData) async {
+  void saveFormData(List<String> formData, String key) async {
     final prefs = await SharedPreferences.getInstance();
-    final key = formData.selectedOption;
-    final jsonData = jsonEncode(formData.toJson()); // Convert to a JSON string
-    await prefs.setString(key, jsonData);
-    print("Data saved");
-    print(jsonData);
-    // Get.to(buttonScreen());
+    await prefs.setStringList(key, formData);
+    Get.snackbar("Congrats!","Data Saved Successfully",backgroundColor: Colors.white,colorText: Colors.black,snackPosition: SnackPosition.BOTTOM);
   }
 
-  void getFormData()async{
-    final prefs = await SharedPreferences.getInstance();
-    final String? items = prefs.getString('Button 1');
-    print("Data getting");
-    print(items);
-  }
 }

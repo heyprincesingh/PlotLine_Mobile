@@ -2,7 +2,6 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:plotline_mobile/view/buttonScreen.dart';
-import 'package:plotline_mobile/model/saveDataModel.dart';
 import 'package:plotline_mobile/controller/formScreenController.dart';
 
 class formScreen extends StatelessWidget {
@@ -192,7 +191,7 @@ class formScreen extends StatelessWidget {
               height: 40,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 SizedBox(
                   height: 50,
@@ -209,19 +208,66 @@ class formScreen extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
-                      final myformData = MyFormData(
-                        selectedOption: controller.selectedOption.value.value,
-                        tooltipText: controller.tooltipTextController.value.text,
-                        textSize: double.parse(controller.textSizeController.value.text),
-                        padding: double.parse(controller.paddingController.value.text),
-                        textColor: controller.textColorController.value.text,
-                        backgroundColor: controller.backgroundColorController.value.text,
-                        cornerRadius: double.parse(controller.cornerRadiusController.value.text),
-                        tooltipWidth: double.parse(controller.tooltipWidthController.value.text),
-                        arrowWidth: double.parse(controller.arrowWidthController.value.text),
-                        arrowHeight: double.parse(controller.arrowHeightController.value.text),
-                      );
-                      controller.saveFormData(myformData);
+                      FocusManager.instance.primaryFocus?.unfocus();
+                      if (controller.tooltipTextController.value.text.isEmpty ||
+                          controller.textSizeController.value.text.isEmpty ||
+                          controller.paddingController.value.text.isEmpty ||
+                          controller.textColorController.value.text.isEmpty ||
+                          controller
+                              .backgroundColorController.value.text.isEmpty ||
+                          controller
+                              .cornerRadiusController.value.text.isEmpty ||
+                          controller
+                              .tooltipWidthController.value.text.isEmpty ||
+                          controller.arrowWidthController.value.text.isEmpty ||
+                          controller.arrowHeightController.value.text.isEmpty) {
+                        Get.snackbar("Error!", "Enter All Data",
+                            backgroundColor: Colors.grey,
+                            colorText: Colors.white,
+                            snackPosition: SnackPosition.BOTTOM);
+                      } else {
+                        List<String> myformData = [
+                          controller.selectedOption.value.value,
+                          controller.tooltipTextController.value.text,
+                          controller.textSizeController.value.text,
+                          controller.paddingController.value.text,
+                          controller.textColorController.value.text.trim(),
+                          controller.backgroundColorController.value.text.trim(),
+                          controller.cornerRadiusController.value.text,
+                          controller.tooltipWidthController.value.text,
+                          controller.arrowWidthController.value.text,
+                          controller.arrowHeightController.value.text,
+                        ];
+                        controller.saveFormData(
+                            myformData, controller.selectedOption.value.value);
+                      }
+                    },
+                    child: Text(
+                      "Save Tooltip",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 16),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 50,
+                  // width: 200,
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateColor.resolveWith(
+                        (states) => Color(0xff0958d9),
+                      ),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                      ),
+                    ),
+                    onPressed: () {
+                      FocusManager.instance.primaryFocus?.unfocus();
+                      Get.to(buttonScreen());
                     },
                     child: Text(
                       "Render Tooltip",
