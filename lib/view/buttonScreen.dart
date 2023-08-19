@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:plotline_mobile/controller/buttonScreenController.dart';
 import 'package:plotline_mobile/controller/colors.dart';
-import 'package:string_to_color/string_to_color.dart';
 
 class buttonScreen extends StatelessWidget {
   buttonScreen({super.key});

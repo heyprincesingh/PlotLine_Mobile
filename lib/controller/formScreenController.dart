@@ -14,12 +14,9 @@ class formScreenController extends GetxController{
   Rx<TextEditingController> arrowWidthController = TextEditingController().obs;
   Rx<TextEditingController> arrowHeightController = TextEditingController().obs;
 
-
-
   void saveFormData(List<String> formData, String key) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setStringList(key, formData);
     Get.snackbar("Congrats!","Data Saved Successfully",backgroundColor: Colors.white,colorText: Colors.black,snackPosition: SnackPosition.BOTTOM);
   }
-
 }
