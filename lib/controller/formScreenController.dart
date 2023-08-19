@@ -13,6 +13,7 @@ class formScreenController extends GetxController{
   Rx<TextEditingController> tooltipWidthController = TextEditingController().obs;
   Rx<TextEditingController> arrowWidthController = TextEditingController().obs;
   Rx<TextEditingController> arrowHeightController = TextEditingController().obs;
+  Rx<TextEditingController> tooltipURLController = TextEditingController().obs;
 
   void saveFormData(List<String> formData, String key) async {
     final prefs = await SharedPreferences.getInstance();

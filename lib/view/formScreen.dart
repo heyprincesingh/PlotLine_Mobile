@@ -191,6 +191,9 @@ class formScreen extends StatelessWidget {
                     )
                   ],
                 ),
+                screenText("Image URL"),
+                screenInput(context, MediaQuery.of(context).size.width - 40,
+                    TextInputType.text, controller.tooltipURLController.value),
                 SizedBox(
                   height: 10,
                 ),
@@ -322,7 +325,9 @@ class formScreen extends StatelessWidget {
                               controller
                                   .arrowWidthController.value.text.isEmpty ||
                               controller
-                                  .arrowHeightController.value.text.isEmpty) {
+                                  .arrowHeightController.value.text.isEmpty ||
+                              controller
+                                  .tooltipURLController.value.text.isEmpty) {
                             Get.snackbar("Error!", "Enter All Data",
                                 backgroundColor: Colors.grey,
                                 colorText: Colors.white,
@@ -334,11 +339,13 @@ class formScreen extends StatelessWidget {
                               controller.textSizeController.value.text,
                               controller.paddingController.value.text,
                               controller.textColorController.value.text.trim(),
-                              controller.backgroundColorController.value.text.trim(),
+                              controller.backgroundColorController.value.text
+                                  .trim(),
                               controller.cornerRadiusController.value.text,
                               controller.tooltipWidthController.value.text,
                               controller.arrowWidthController.value.text,
                               controller.arrowHeightController.value.text,
+                              controller.tooltipURLController.value.text,
                             ];
                             controller.saveFormData(myformData,
                                 controller.selectedOption.value.value);
@@ -382,6 +389,9 @@ class formScreen extends StatelessWidget {
                       ),
                     ),
                   ],
+                ),
+                SizedBox(
+                  height: 20,
                 ),
               ],
             ),

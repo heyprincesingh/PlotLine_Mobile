@@ -62,7 +62,8 @@ class buttonScreen extends StatelessWidget {
                                   width:
                                       20 + double.parse(controller.data[0][9]),
                                   child: CustomPaint(
-                                    foregroundPainter: tooltipUpTriangle(checkColor(controller.data[0][5])),
+                                    foregroundPainter: tooltipUpTriangle(
+                                        checkColor(controller.data[0][5])),
                                   ),
                                 ),
                               ),
@@ -80,13 +81,22 @@ class buttonScreen extends StatelessWidget {
                                   padding: EdgeInsets.all(
                                       double.parse(controller.data[0][3])),
                                   child: Center(
-                                    child: Text(
-                                      controller.data[0][1],
-                                      style: GoogleFonts.barlow(
-                                          fontSize: double.parse(
-                                              controller.data[0][2]),
-                                          color: checkColor(controller.data[0][4]),
-                                          fontWeight: FontWeight.w500),
+                                    child: Column(
+                                      children: [
+                                        Image.network(
+                                          controller.data[0][10],
+                                          fit: BoxFit.fitWidth,
+                                        ),
+                                        Text(
+                                          controller.data[0][1],
+                                          style: GoogleFonts.barlow(
+                                              fontSize: double.parse(
+                                                  controller.data[0][2]),
+                                              color: checkColor(
+                                                  controller.data[0][4]),
+                                              fontWeight: FontWeight.w500),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
@@ -110,7 +120,8 @@ class buttonScreen extends StatelessWidget {
                                       width: 20 +
                                           double.parse(controller.data[1][9]),
                                       child: CustomPaint(
-                                        foregroundPainter: tooltipUpTriangle(checkColor(controller.data[1][5])),
+                                        foregroundPainter: tooltipUpTriangle(
+                                            checkColor(controller.data[1][5])),
                                       ),
                                     ),
                                   ),
@@ -128,14 +139,23 @@ class buttonScreen extends StatelessWidget {
                                       padding: EdgeInsets.all(
                                           double.parse(controller.data[1][3])),
                                       child: Center(
-                                        child: Text(
-                                          controller.data[1][1],
-                                          style: GoogleFonts.barlow(
-                                              fontSize: double.parse(
-                                                  controller.data[1][2]),
-                                              color: checkColor(controller.data[1][4]),
-                                              //Colors.white,
-                                              fontWeight: FontWeight.w500),
+                                        child: Column(
+                                          children: [
+                                            Image.network(
+                                              controller.data[1][10],
+                                              fit: BoxFit.fitWidth,
+                                            ),
+                                            Text(
+                                              controller.data[1][1],
+                                              style: GoogleFonts.barlow(
+                                                  fontSize: double.parse(
+                                                      controller.data[1][2]),
+                                                  color: checkColor(
+                                                      controller.data[1][4]),
+                                                  //Colors.white,
+                                                  fontWeight: FontWeight.w500),
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     ),
@@ -150,7 +170,7 @@ class buttonScreen extends StatelessWidget {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.center,
                                     children: [
-                                      SizedBox(height: 110),
+                                      SizedBox(height: 130),
                                       Padding(
                                         padding: const EdgeInsets.only(
                                             left: 20, right: 20),
@@ -163,7 +183,8 @@ class buttonScreen extends StatelessWidget {
                                                   controller.data[2][9]),
                                           child: CustomPaint(
                                             foregroundPainter:
-                                                tooltipUpTriangle(checkColor(controller.data[2][5])),
+                                                tooltipUpTriangle(checkColor(
+                                                    controller.data[2][5])),
                                           ),
                                         ),
                                       ),
@@ -171,7 +192,8 @@ class buttonScreen extends StatelessWidget {
                                         width:
                                             double.parse(controller.data[2][7]),
                                         decoration: BoxDecoration(
-                                            color: checkColor(controller.data[2][5]),
+                                            color: checkColor(
+                                                controller.data[2][5]),
                                             borderRadius: BorderRadius.all(
                                                 Radius.circular(double.parse(
                                                     controller.data[2][6])))),
@@ -179,13 +201,25 @@ class buttonScreen extends StatelessWidget {
                                           padding: EdgeInsets.all(double.parse(
                                               controller.data[2][3])),
                                           child: Center(
-                                            child: Text(
-                                              controller.data[2][1],
-                                              style: GoogleFonts.barlow(
-                                                  fontSize: double.parse(
-                                                      controller.data[2][2]),
-                                                  color: checkColor(controller.data[2][4]),
-                                                  fontWeight: FontWeight.w500),
+                                            child: Column(
+                                              children: [
+                                                Image.network(
+                                                  controller.data[2][10],
+                                                  fit: BoxFit.fitWidth,
+                                                ),
+                                                Text(
+                                                  controller.data[2][1],
+                                                  style: GoogleFonts.barlow(
+                                                      fontSize: double.parse(
+                                                          controller.data[2]
+                                                              [2]),
+                                                      color: checkColor(
+                                                          controller.data[2]
+                                                              [4]),
+                                                      fontWeight:
+                                                          FontWeight.w500),
+                                                ),
+                                              ],
                                             ),
                                           ),
                                         ),
@@ -205,7 +239,8 @@ class buttonScreen extends StatelessWidget {
                                             width: double.parse(
                                                 controller.data[3][7]),
                                             decoration: BoxDecoration(
-                                                color: checkColor(controller.data[3][5]),
+                                                color: checkColor(
+                                                    controller.data[3][5]),
                                                 borderRadius: BorderRadius.all(
                                                     Radius.circular(
                                                         double.parse(controller
@@ -215,15 +250,25 @@ class buttonScreen extends StatelessWidget {
                                                   double.parse(
                                                       controller.data[3][3])),
                                               child: Center(
-                                                child: Text(
-                                                  controller.data[3][1],
-                                                  style: GoogleFonts.barlow(
-                                                      fontSize: double.parse(
-                                                          controller.data[3]
-                                                              [2]),
-                                                      color: checkColor(controller.data[3][4]),
-                                                      fontWeight:
-                                                          FontWeight.w500),
+                                                child: Column(
+                                                  children: [
+                                                    Image.network(controller.data[3][10],
+                                                      fit: BoxFit.fitWidth,
+                                                    ),
+                                                    Text(controller.data[3][1],
+                                                        style: GoogleFonts.barlow(
+                                                            fontSize: double
+                                                                .parse(controller
+                                                                        .data[3]
+                                                                    [2]),
+                                                            color: checkColor(
+                                                                controller
+                                                                        .data[3]
+                                                                    [4]),
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .w500)),
+                                                  ],
                                                 ),
                                               ),
                                             ),
@@ -240,7 +285,10 @@ class buttonScreen extends StatelessWidget {
                                                       controller.data[3][9]),
                                               child: CustomPaint(
                                                 foregroundPainter:
-                                                    tooltipDownTriangle(checkColor(controller.data[3][5])),
+                                                    tooltipDownTriangle(
+                                                  checkColor(
+                                                      controller.data[3][5]),
+                                                ),
                                               ),
                                             ),
                                           ),
@@ -260,7 +308,8 @@ class buttonScreen extends StatelessWidget {
                                                 width: double.parse(
                                                     controller.data[4][7]),
                                                 decoration: BoxDecoration(
-                                                    color: checkColor(controller.data[4][5]),
+                                                    color: checkColor(
+                                                        controller.data[4][5]),
                                                     borderRadius: BorderRadius
                                                         .all(Radius.circular(
                                                             double.parse(
@@ -272,15 +321,22 @@ class buttonScreen extends StatelessWidget {
                                                       double.parse(controller
                                                           .data[4][3])),
                                                   child: Center(
-                                                    child: Text(
-                                                      controller.data[4][1],
-                                                      style: GoogleFonts.barlow(
-                                                          fontSize: double
-                                                              .parse(controller
-                                                                  .data[4][2]),
-                                                          color: checkColor(controller.data[4][4]),
-                                                          fontWeight:
-                                                              FontWeight.w500),
+                                                    child: Column(
+                                                      children: [
+                                                        Image.network(controller.data[4][10], fit: BoxFit.fitWidth,),
+                                                        Text(
+                                                          controller.data[4][1],
+                                                          style: GoogleFonts.barlow(
+                                                              fontSize: double
+                                                                  .parse(controller
+                                                                      .data[4][2]),
+                                                              color: checkColor(
+                                                                  controller.data[4]
+                                                                      [4]),
+                                                              fontWeight:
+                                                                  FontWeight.w500),
+                                                        ),
+                                                      ],
                                                     ),
                                                   ),
                                                 ),
@@ -297,7 +353,11 @@ class buttonScreen extends StatelessWidget {
                                                           .data[4][9]),
                                                   child: CustomPaint(
                                                     foregroundPainter:
-                                                        tooltipDownTriangle(checkColor(controller.data[4][5])),
+                                                        tooltipDownTriangle(
+                                                            checkColor(
+                                                                controller
+                                                                        .data[4]
+                                                                    [5])),
                                                   ),
                                                 ),
                                               ),
@@ -353,7 +413,7 @@ class tooltipUpTriangle extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = bgColor//Color(0xff212121)
+      ..color = bgColor //Color(0xff212121)
       ..strokeWidth = 0
       ..style = PaintingStyle.stroke;
 
@@ -366,7 +426,7 @@ class tooltipUpTriangle extends CustomPainter {
     canvas.drawPath(path, paint);
 
     final paint2 = Paint()
-      ..color = bgColor//Color(0xff212121)
+      ..color = bgColor //Color(0xff212121)
       ..style = PaintingStyle.fill;
 
     canvas.drawPath(path, paint2);
@@ -380,6 +440,7 @@ class tooltipDownTriangle extends CustomPainter {
   final Color bgColor;
 
   tooltipDownTriangle(this.bgColor);
+
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
