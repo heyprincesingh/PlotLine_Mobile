@@ -1,3 +1,18 @@
+<h1>Screenshots<h1>
+   <h3>Screen 1<h3>
+      <p align = center >
+         <img src = "https://github.com/heyprincesingh/PlotLine_Mobile/blob/master/githubScreenshots/Screen1.jpg" height = "300">
+         <img src = "https://github.com/heyprincesingh/PlotLine_Mobile/blob/master/githubScreenshots/screen1Video.gif" height = "300">
+      </p>
+      <h3>Screen 2<h3>
+      <p align = center >
+         <img src = "https://github.com/heyprincesingh/PlotLine_Mobile/blob/master/githubScreenshots/button1.jpg" height = "300">
+         <img src = "https://github.com/heyprincesingh/PlotLine_Mobile/blob/master/githubScreenshots/button2.jpg" height = "300">
+         <img src = "https://github.com/heyprincesingh/PlotLine_Mobile/blob/master/githubScreenshots/button4.jpg" height = "300">
+         <img src = "https://github.com/heyprincesingh/PlotLine_Mobile/blob/master/githubScreenshots/button3%20deleted.jpg" height = "300">
+         <img src = "https://github.com/heyprincesingh/PlotLine_Mobile/blob/master/githubScreenshots/screen2Video.gif" height = "300">
+      </p>
+
 # Plotline Mobile App Documentation
 
 ## Dependencies Used
