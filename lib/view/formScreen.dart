@@ -198,109 +198,109 @@ class formScreen extends StatelessWidget {
                   height: 10,
                 ),
                 Obx(
-                  () => controller.tooltipTextController.value.text.isEmpty ||
-                          controller.textSizeController.value.text.isEmpty ||
-                          controller.paddingController.value.text.isEmpty ||
-                          controller.textColorController.value.text.isEmpty ||
-                          controller
-                              .backgroundColorController.value.text.isEmpty ||
-                          controller
-                              .cornerRadiusController.value.text.isEmpty ||
-                          controller
-                              .tooltipWidthController.value.text.isEmpty ||
-                          controller.arrowWidthController.value.text.isEmpty ||
-                          controller.arrowHeightController.value.text.isEmpty
+                      () => controller.tooltipTextController.value.text.isEmpty ||
+                      controller.textSizeController.value.text.isEmpty ||
+                      controller.paddingController.value.text.isEmpty ||
+                      controller.textColorController.value.text.isEmpty ||
+                      controller
+                          .backgroundColorController.value.text.isEmpty ||
+                      controller
+                          .cornerRadiusController.value.text.isEmpty ||
+                      controller
+                          .tooltipWidthController.value.text.isEmpty ||
+                      controller.arrowWidthController.value.text.isEmpty ||
+                      controller.arrowHeightController.value.text.isEmpty
                       ? SizedBox()
                       : Container(
-                          width: MediaQuery.of(context).size.width,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(21),
-                              border: Border.all(
-                                  color: Colors.black,
-                                  width: 1,
-                                  strokeAlign: BorderSide.strokeAlignCenter)),
-                          child: Padding(
-                            padding: const EdgeInsets.only(top: 10, bottom: 10),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 20, right: 20),
-                                  child: SizedBox(
-                                    height: 10 +
-                                        double.parse(controller
-                                            .arrowHeightController.value.text),
-                                    width: 20 +
-                                        double.parse(controller
-                                            .arrowWidthController.value.text),
-                                    child: CustomPaint(
-                                      foregroundPainter: tooltipUpTriangle(
-                                        checkColor(
-                                          controller.backgroundColorController
-                                              .value.text
-                                              .trim(),
-                                        ),
-                                      ),
-                                    ),
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(21),
+                        border: Border.all(
+                            color: Colors.black,
+                            width: 1,
+                            strokeAlign: BorderSide.strokeAlignCenter)),
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 10, bottom: 10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                left: 20, right: 20),
+                            child: SizedBox(
+                              height: 10 +
+                                  double.parse(controller
+                                      .arrowHeightController.value.text),
+                              width: 20 +
+                                  double.parse(controller
+                                      .arrowWidthController.value.text),
+                              child: CustomPaint(
+                                foregroundPainter: tooltipUpTriangle(
+                                  checkColor(
+                                    controller.backgroundColorController
+                                        .value.text
+                                        .trim(),
                                   ),
                                 ),
-                                Container(
-                                  width: double.parse(controller
-                                      .tooltipWidthController.value.text),
-                                  decoration: BoxDecoration(
-                                    color: checkColor(
-                                      controller
-                                          .backgroundColorController.value.text
-                                          .trim(),
-                                    ),
-                                    borderRadius: BorderRadius.all(
-                                      Radius.circular(
-                                        double.parse(controller
-                                            .cornerRadiusController.value.text),
-                                      ),
-                                    ),
-                                  ),
-                                  child: Padding(
-                                    padding: EdgeInsets.all(double.parse(
-                                        controller
-                                            .paddingController.value.text)),
-                                    child: Center(
-                                      child: Column(
-                                        children: [
-                                          controller.tooltipURLController.value
-                                                      .text ==
-                                                  ""
-                                              ? SizedBox()
-                                              : Image.network(controller
-                                                  .tooltipURLController
-                                                  .value
-                                                  .text),
-                                          Text(
-                                            controller.tooltipTextController
-                                                .value.text,
-                                            style: GoogleFonts.barlow(
-                                                fontSize: double.parse(
-                                                    controller
-                                                        .textSizeController
-                                                        .value
-                                                        .text),
-                                                color: checkColor(
-                                                  controller.textColorController
-                                                      .value.text
-                                                      .trim(),
-                                                ),
-                                                fontWeight: FontWeight.w500),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                )
-                              ],
+                              ),
                             ),
                           ),
-                        ),
+                          Container(
+                            width: double.parse(controller
+                                .tooltipWidthController.value.text),
+                            decoration: BoxDecoration(
+                              color: checkColor(
+                                controller
+                                    .backgroundColorController.value.text
+                                    .trim(),
+                              ),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(
+                                  double.parse(controller
+                                      .cornerRadiusController.value.text),
+                                ),
+                              ),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsets.all(double.parse(
+                                  controller
+                                      .paddingController.value.text)),
+                              child: Center(
+                                child: Column(
+                                  children: [
+                                    controller.tooltipURLController.value
+                                        .text ==
+                                        ""
+                                        ? SizedBox()
+                                        : Image.network(controller
+                                        .tooltipURLController
+                                        .value
+                                        .text),
+                                    Text(
+                                      controller.tooltipTextController
+                                          .value.text,
+                                      style: GoogleFonts.barlow(
+                                          fontSize: double.parse(
+                                              controller
+                                                  .textSizeController
+                                                  .value
+                                                  .text),
+                                          color: checkColor(
+                                            controller.textColorController
+                                                .value.text
+                                                .trim(),
+                                          ),
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
                 ),
                 SizedBox(
                   height: 10,
@@ -313,10 +313,10 @@ class formScreen extends StatelessWidget {
                       child: ElevatedButton(
                         style: ButtonStyle(
                           backgroundColor: MaterialStateColor.resolveWith(
-                            (states) => Color(0xff0958d9),
+                                (states) => Color(0xff0958d9),
                           ),
                           shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                          MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(5),
                             ),
@@ -325,7 +325,7 @@ class formScreen extends StatelessWidget {
                         onPressed: () {
                           FocusManager.instance.primaryFocus?.unfocus();
                           if (controller
-                                  .tooltipTextController.value.text.isEmpty ||
+                              .tooltipTextController.value.text.isEmpty ||
                               controller
                                   .textSizeController.value.text.isEmpty ||
                               controller.paddingController.value.text.isEmpty ||
@@ -379,10 +379,10 @@ class formScreen extends StatelessWidget {
                       child: ElevatedButton(
                         style: ButtonStyle(
                           backgroundColor: MaterialStateColor.resolveWith(
-                            (states) => Color(0xff0958d9),
+                                (states) => Color(0xff0958d9),
                           ),
                           shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                          MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(5),
                             ),

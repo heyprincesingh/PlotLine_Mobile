@@ -46,333 +46,333 @@ class buttonScreen extends StatelessWidget {
                   child: buttons(5),
                 ),
                 Obx(
-                  () => controller.i == 1 && controller.data[0] != null
+                      () => controller.i == 1 && controller.data[0] != null
                       ? Positioned(
-                          top: 65,
-                          left: 0,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 20, right: 20),
-                                child: SizedBox(
-                                  height:
-                                      10 + double.parse(controller.data[0][8]),
-                                  width:
-                                      20 + double.parse(controller.data[0][9]),
-                                  child: CustomPaint(
-                                    foregroundPainter: tooltipUpTriangle(
-                                        checkColor(controller.data[0][5])),
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                width: double.parse(controller.data[0][7]),
-                                decoration: BoxDecoration(
-                                  color: checkColor(controller.data[0][5]),
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(
-                                      double.parse(controller.data[0][6]),
-                                    ),
-                                  ),
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsets.all(
-                                      double.parse(controller.data[0][3])),
-                                  child: Center(
-                                    child: Column(
-                                      children: [
-                                        controller.data[0][10] == "" ? SizedBox() : Image.network(
-                                          controller.data[0][10],
-                                          fit: BoxFit.fitWidth,
-                                        ),
-                                        Text(
-                                          controller.data[0][1],
-                                          style: GoogleFonts.barlow(
-                                              fontSize: double.parse(
-                                                  controller.data[0][2]),
-                                              color: checkColor(
-                                                  controller.data[0][4]),
-                                              fontWeight: FontWeight.w500),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              )
-                            ],
+                    top: 65,
+                    left: 0,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding:
+                          const EdgeInsets.only(left: 20, right: 20),
+                          child: SizedBox(
+                            height:
+                            10 + double.parse(controller.data[0][8]),
+                            width:
+                            20 + double.parse(controller.data[0][9]),
+                            child: CustomPaint(
+                              foregroundPainter: tooltipUpTriangle(
+                                  checkColor(controller.data[0][5])),
+                            ),
                           ),
-                        )
-                      : controller.i == 2 && controller.data[1] != null
-                          ? Positioned(
-                              top: 65,
-                              right: 0,
+                        ),
+                        Container(
+                          width: double.parse(controller.data[0][7]),
+                          decoration: BoxDecoration(
+                            color: checkColor(controller.data[0][5]),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(
+                                double.parse(controller.data[0][6]),
+                              ),
+                            ),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.all(
+                                double.parse(controller.data[0][3])),
+                            child: Center(
                               child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.end,
                                 children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        left: 20, right: 20),
-                                    child: SizedBox(
-                                      height: 10 +
-                                          double.parse(controller.data[1][8]),
-                                      width: 20 +
-                                          double.parse(controller.data[1][9]),
-                                      child: CustomPaint(
-                                        foregroundPainter: tooltipUpTriangle(
-                                            checkColor(controller.data[1][5])),
-                                      ),
-                                    ),
+                                  controller.data[0][10] == "" ? SizedBox() : Image.network(
+                                    controller.data[0][10],
+                                    fit: BoxFit.fitWidth,
                                   ),
-                                  Container(
-                                    width: double.parse(controller.data[1][7]),
-                                    decoration: BoxDecoration(
-                                      color: checkColor(controller.data[1][5]),
-                                      borderRadius: BorderRadius.all(
-                                        Radius.circular(
-                                          double.parse(controller.data[1][6]),
-                                        ),
-                                      ),
-                                    ),
-                                    child: Padding(
-                                      padding: EdgeInsets.all(
-                                          double.parse(controller.data[1][3])),
-                                      child: Center(
-                                        child: Column(
-                                          children: [
-                                            controller.data[1][10] == "" ? SizedBox() : Image.network(
-                                              controller.data[1][10],
-                                              fit: BoxFit.fitWidth,
-                                            ),
-                                            Text(
-                                              controller.data[1][1],
-                                              style: GoogleFonts.barlow(
-                                                  fontSize: double.parse(
-                                                      controller.data[1][2]),
-                                                  color: checkColor(
-                                                      controller.data[1][4]),
-                                                  //Colors.white,
-                                                  fontWeight: FontWeight.w500),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  )
+                                  Text(
+                                    controller.data[0][1],
+                                    style: GoogleFonts.barlow(
+                                        fontSize: double.parse(
+                                            controller.data[0][2]),
+                                        color: checkColor(
+                                            controller.data[0][4]),
+                                        fontWeight: FontWeight.w500),
+                                  ),
                                 ],
                               ),
-                            )
-                          : controller.i == 3 && controller.data[2] != null
-                              ? Center(
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      SizedBox(height: 130),
-                                      Padding(
-                                        padding: const EdgeInsets.only(
-                                            left: 20, right: 20),
-                                        child: SizedBox(
-                                          height: 10 +
-                                              double.parse(
-                                                  controller.data[2][8]),
-                                          width: 20 +
-                                              double.parse(
-                                                  controller.data[2][9]),
-                                          child: CustomPaint(
-                                            foregroundPainter:
-                                                tooltipUpTriangle(checkColor(
-                                                    controller.data[2][5])),
-                                          ),
-                                        ),
-                                      ),
-                                      Container(
-                                        width:
-                                            double.parse(controller.data[2][7]),
-                                        decoration: BoxDecoration(
-                                            color: checkColor(
-                                                controller.data[2][5]),
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(double.parse(
-                                                    controller.data[2][6])))),
-                                        child: Padding(
-                                          padding: EdgeInsets.all(double.parse(
-                                              controller.data[2][3])),
-                                          child: Center(
-                                            child: Column(
-                                              children: [
-                                                controller.data[2][10] == "" ? SizedBox() : Image.network(
-                                                  controller.data[2][10],
-                                                  fit: BoxFit.fitWidth,
-                                                ),
-                                                Text(
-                                                  controller.data[2][1],
-                                                  style: GoogleFonts.barlow(
-                                                      fontSize: double.parse(
-                                                          controller.data[2]
-                                                              [2]),
-                                                      color: checkColor(
-                                                          controller.data[2]
-                                                              [4]),
-                                                      fontWeight:
-                                                          FontWeight.w500),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                      )
-                                    ],
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  )
+                      : controller.i == 2 && controller.data[1] != null
+                      ? Positioned(
+                    top: 65,
+                    right: 0,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              left: 20, right: 20),
+                          child: SizedBox(
+                            height: 10 +
+                                double.parse(controller.data[1][8]),
+                            width: 20 +
+                                double.parse(controller.data[1][9]),
+                            child: CustomPaint(
+                              foregroundPainter: tooltipUpTriangle(
+                                  checkColor(controller.data[1][5])),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          width: double.parse(controller.data[1][7]),
+                          decoration: BoxDecoration(
+                            color: checkColor(controller.data[1][5]),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(
+                                double.parse(controller.data[1][6]),
+                              ),
+                            ),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.all(
+                                double.parse(controller.data[1][3])),
+                            child: Center(
+                              child: Column(
+                                children: [
+                                  controller.data[1][10] == "" ? SizedBox() : Image.network(
+                                    controller.data[1][10],
+                                    fit: BoxFit.fitWidth,
                                   ),
-                                )
-                              : controller.i == 4 && controller.data[3] != null
-                                  ? Positioned(
-                                      bottom: 65,
-                                      left: 0,
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Container(
-                                            width: double.parse(
-                                                controller.data[3][7]),
-                                            decoration: BoxDecoration(
-                                                color: checkColor(
-                                                    controller.data[3][5]),
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(
-                                                        double.parse(controller
-                                                            .data[3][6])))),
-                                            child: Padding(
-                                              padding: EdgeInsets.all(
-                                                  double.parse(
-                                                      controller.data[3][3])),
-                                              child: Center(
-                                                child: Column(
-                                                  children: [
-                                                    controller.data[3][10] == "" ? SizedBox() : Image.network(
-                                                      controller.data[3][10],
-                                                      fit: BoxFit.fitWidth,
-                                                    ),
-                                                    Text(controller.data[3][1],
-                                                        style: GoogleFonts.barlow(
-                                                            fontSize: double
-                                                                .parse(controller
-                                                                        .data[3]
-                                                                    [2]),
-                                                            color: checkColor(
-                                                                controller
-                                                                        .data[3]
-                                                                    [4]),
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .w500)),
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 20, right: 20),
-                                            child: SizedBox(
-                                              height: 10 +
-                                                  double.parse(
-                                                      controller.data[3][8]),
-                                              width: 20 +
-                                                  double.parse(
-                                                      controller.data[3][9]),
-                                              child: CustomPaint(
-                                                foregroundPainter:
-                                                    tooltipDownTriangle(
-                                                  checkColor(
-                                                      controller.data[3][5]),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    )
-                                  : controller.i == 5 &&
-                                          controller.data[4] != null
-                                      ? Positioned(
-                                          bottom: 65,
-                                          right: 0,
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.end,
-                                            children: [
-                                              Container(
-                                                width: double.parse(
-                                                    controller.data[4][7]),
-                                                decoration: BoxDecoration(
-                                                    color: checkColor(
-                                                        controller.data[4][5]),
-                                                    borderRadius: BorderRadius
-                                                        .all(Radius.circular(
-                                                            double.parse(
-                                                                controller
-                                                                        .data[4]
-                                                                    [6])))),
-                                                child: Padding(
-                                                  padding: EdgeInsets.all(
-                                                      double.parse(controller
-                                                          .data[4][3])),
-                                                  child: Center(
-                                                    child: Column(
-                                                      children: [
-                                                        controller.data[4][10] == "" ? SizedBox() : Image.network(
-                                                          controller.data[4]
-                                                              [10],
-                                                          fit: BoxFit.fitWidth,
-                                                        ),
-                                                        Text(
-                                                          controller.data[4][1],
-                                                          style: GoogleFonts.barlow(
-                                                              fontSize: double
-                                                                  .parse(controller
-                                                                          .data[
-                                                                      4][2]),
-                                                              color: checkColor(
-                                                                  controller
-                                                                          .data[
-                                                                      4][4]),
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w500),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                              Padding(
-                                                padding: const EdgeInsets.only(
-                                                    left: 20, right: 20),
-                                                child: SizedBox(
-                                                  height: 10 +
-                                                      double.parse(controller
-                                                          .data[4][8]),
-                                                  width: 20 +
-                                                      double.parse(controller
-                                                          .data[4][9]),
-                                                  child: CustomPaint(
-                                                    foregroundPainter:
-                                                        tooltipDownTriangle(
-                                                            checkColor(
-                                                                controller
-                                                                        .data[4]
-                                                                    [5])),
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        )
-                                      : SizedBox( ),
+                                  Text(
+                                    controller.data[1][1],
+                                    style: GoogleFonts.barlow(
+                                        fontSize: double.parse(
+                                            controller.data[1][2]),
+                                        color: checkColor(
+                                            controller.data[1][4]),
+                                        //Colors.white,
+                                        fontWeight: FontWeight.w500),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  )
+                      : controller.i == 3 && controller.data[2] != null
+                      ? Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment:
+                      CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(height: 130),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              left: 20, right: 20),
+                          child: SizedBox(
+                            height: 10 +
+                                double.parse(
+                                    controller.data[2][8]),
+                            width: 20 +
+                                double.parse(
+                                    controller.data[2][9]),
+                            child: CustomPaint(
+                              foregroundPainter:
+                              tooltipUpTriangle(checkColor(
+                                  controller.data[2][5])),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          width:
+                          double.parse(controller.data[2][7]),
+                          decoration: BoxDecoration(
+                              color: checkColor(
+                                  controller.data[2][5]),
+                              borderRadius: BorderRadius.all(
+                                  Radius.circular(double.parse(
+                                      controller.data[2][6])))),
+                          child: Padding(
+                            padding: EdgeInsets.all(double.parse(
+                                controller.data[2][3])),
+                            child: Center(
+                              child: Column(
+                                children: [
+                                  controller.data[2][10] == "" ? SizedBox() : Image.network(
+                                    controller.data[2][10],
+                                    fit: BoxFit.fitWidth,
+                                  ),
+                                  Text(
+                                    controller.data[2][1],
+                                    style: GoogleFonts.barlow(
+                                        fontSize: double.parse(
+                                            controller.data[2]
+                                            [2]),
+                                        color: checkColor(
+                                            controller.data[2]
+                                            [4]),
+                                        fontWeight:
+                                        FontWeight.w500),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  )
+                      : controller.i == 4 && controller.data[3] != null
+                      ? Positioned(
+                    bottom: 65,
+                    left: 0,
+                    child: Column(
+                      crossAxisAlignment:
+                      CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          width: double.parse(
+                              controller.data[3][7]),
+                          decoration: BoxDecoration(
+                              color: checkColor(
+                                  controller.data[3][5]),
+                              borderRadius: BorderRadius.all(
+                                  Radius.circular(
+                                      double.parse(controller
+                                          .data[3][6])))),
+                          child: Padding(
+                            padding: EdgeInsets.all(
+                                double.parse(
+                                    controller.data[3][3])),
+                            child: Center(
+                              child: Column(
+                                children: [
+                                  controller.data[3][10] == "" ? SizedBox() : Image.network(
+                                    controller.data[3][10],
+                                    fit: BoxFit.fitWidth,
+                                  ),
+                                  Text(controller.data[3][1],
+                                      style: GoogleFonts.barlow(
+                                          fontSize: double
+                                              .parse(controller
+                                              .data[3]
+                                          [2]),
+                                          color: checkColor(
+                                              controller
+                                                  .data[3]
+                                              [4]),
+                                          fontWeight:
+                                          FontWeight
+                                              .w500)),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              left: 20, right: 20),
+                          child: SizedBox(
+                            height: 10 +
+                                double.parse(
+                                    controller.data[3][8]),
+                            width: 20 +
+                                double.parse(
+                                    controller.data[3][9]),
+                            child: CustomPaint(
+                              foregroundPainter:
+                              tooltipDownTriangle(
+                                checkColor(
+                                    controller.data[3][5]),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                      : controller.i == 5 &&
+                      controller.data[4] != null
+                      ? Positioned(
+                    bottom: 65,
+                    right: 0,
+                    child: Column(
+                      crossAxisAlignment:
+                      CrossAxisAlignment.end,
+                      children: [
+                        Container(
+                          width: double.parse(
+                              controller.data[4][7]),
+                          decoration: BoxDecoration(
+                              color: checkColor(
+                                  controller.data[4][5]),
+                              borderRadius: BorderRadius
+                                  .all(Radius.circular(
+                                  double.parse(
+                                      controller
+                                          .data[4]
+                                      [6])))),
+                          child: Padding(
+                            padding: EdgeInsets.all(
+                                double.parse(controller
+                                    .data[4][3])),
+                            child: Center(
+                              child: Column(
+                                children: [
+                                  controller.data[4][10] == "" ? SizedBox() : Image.network(
+                                    controller.data[4]
+                                    [10],
+                                    fit: BoxFit.fitWidth,
+                                  ),
+                                  Text(
+                                    controller.data[4][1],
+                                    style: GoogleFonts.barlow(
+                                        fontSize: double
+                                            .parse(controller
+                                            .data[
+                                        4][2]),
+                                        color: checkColor(
+                                            controller
+                                                .data[
+                                            4][4]),
+                                        fontWeight:
+                                        FontWeight
+                                            .w500),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              left: 20, right: 20),
+                          child: SizedBox(
+                            height: 10 +
+                                double.parse(controller
+                                    .data[4][8]),
+                            width: 20 +
+                                double.parse(controller
+                                    .data[4][9]),
+                            child: CustomPaint(
+                              foregroundPainter:
+                              tooltipDownTriangle(
+                                  checkColor(
+                                      controller
+                                          .data[4]
+                                      [5])),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                      : SizedBox( ),
                 ),
               ],
             ),
@@ -389,7 +389,7 @@ class buttonScreen extends StatelessWidget {
       child: ElevatedButton(
         style: ButtonStyle(
           backgroundColor: MaterialStateColor.resolveWith(
-            (states) => Colors.white,
+                (states) => Colors.white,
           ),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
