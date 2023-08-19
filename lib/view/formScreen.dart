@@ -266,18 +266,33 @@ class formScreen extends StatelessWidget {
                                         controller
                                             .paddingController.value.text)),
                                     child: Center(
-                                      child: Text(
-                                        controller
-                                            .tooltipTextController.value.text,
-                                        style: GoogleFonts.barlow(
-                                            fontSize: double.parse(controller
-                                                .textSizeController.value.text),
-                                            color: checkColor(
-                                              controller.textColorController
-                                                  .value.text
-                                                  .trim(),
-                                            ),
-                                            fontWeight: FontWeight.w500),
+                                      child: Column(
+                                        children: [
+                                          controller.tooltipURLController.value
+                                                      .text ==
+                                                  ""
+                                              ? SizedBox()
+                                              : Image.network(controller
+                                                  .tooltipURLController
+                                                  .value
+                                                  .text),
+                                          Text(
+                                            controller.tooltipTextController
+                                                .value.text,
+                                            style: GoogleFonts.barlow(
+                                                fontSize: double.parse(
+                                                    controller
+                                                        .textSizeController
+                                                        .value
+                                                        .text),
+                                                color: checkColor(
+                                                  controller.textColorController
+                                                      .value.text
+                                                      .trim(),
+                                                ),
+                                                fontWeight: FontWeight.w500),
+                                          ),
+                                        ],
                                       ),
                                     ),
                                   ),
@@ -325,9 +340,7 @@ class formScreen extends StatelessWidget {
                               controller
                                   .arrowWidthController.value.text.isEmpty ||
                               controller
-                                  .arrowHeightController.value.text.isEmpty ||
-                              controller
-                                  .tooltipURLController.value.text.isEmpty) {
+                                  .arrowHeightController.value.text.isEmpty) {
                             Get.snackbar("Error!", "Enter All Data",
                                 backgroundColor: Colors.grey,
                                 colorText: Colors.white,

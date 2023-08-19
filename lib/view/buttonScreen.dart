@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:plotline_mobile/controller/buttonScreenController.dart';
 import 'package:plotline_mobile/controller/colors.dart';
+import 'package:plotline_mobile/controller/buttonScreenController.dart';
 
 class buttonScreen extends StatelessWidget {
   buttonScreen({super.key});
@@ -83,7 +83,7 @@ class buttonScreen extends StatelessWidget {
                                   child: Center(
                                     child: Column(
                                       children: [
-                                        Image.network(
+                                        controller.data[0][10] == "" ? SizedBox() : Image.network(
                                           controller.data[0][10],
                                           fit: BoxFit.fitWidth,
                                         ),
@@ -141,7 +141,7 @@ class buttonScreen extends StatelessWidget {
                                       child: Center(
                                         child: Column(
                                           children: [
-                                            Image.network(
+                                            controller.data[1][10] == "" ? SizedBox() : Image.network(
                                               controller.data[1][10],
                                               fit: BoxFit.fitWidth,
                                             ),
@@ -203,7 +203,7 @@ class buttonScreen extends StatelessWidget {
                                           child: Center(
                                             child: Column(
                                               children: [
-                                                Image.network(
+                                                controller.data[2][10] == "" ? SizedBox() : Image.network(
                                                   controller.data[2][10],
                                                   fit: BoxFit.fitWidth,
                                                 ),
@@ -252,7 +252,8 @@ class buttonScreen extends StatelessWidget {
                                               child: Center(
                                                 child: Column(
                                                   children: [
-                                                    Image.network(controller.data[3][10],
+                                                    controller.data[3][10] == "" ? SizedBox() : Image.network(
+                                                      controller.data[3][10],
                                                       fit: BoxFit.fitWidth,
                                                     ),
                                                     Text(controller.data[3][1],
@@ -323,18 +324,25 @@ class buttonScreen extends StatelessWidget {
                                                   child: Center(
                                                     child: Column(
                                                       children: [
-                                                        Image.network(controller.data[4][10], fit: BoxFit.fitWidth,),
+                                                        controller.data[4][10] == "" ? SizedBox() : Image.network(
+                                                          controller.data[4]
+                                                              [10],
+                                                          fit: BoxFit.fitWidth,
+                                                        ),
                                                         Text(
                                                           controller.data[4][1],
                                                           style: GoogleFonts.barlow(
                                                               fontSize: double
                                                                   .parse(controller
-                                                                      .data[4][2]),
+                                                                          .data[
+                                                                      4][2]),
                                                               color: checkColor(
-                                                                  controller.data[4]
-                                                                      [4]),
+                                                                  controller
+                                                                          .data[
+                                                                      4][4]),
                                                               fontWeight:
-                                                                  FontWeight.w500),
+                                                                  FontWeight
+                                                                      .w500),
                                                         ),
                                                       ],
                                                     ),
@@ -364,7 +372,7 @@ class buttonScreen extends StatelessWidget {
                                             ],
                                           ),
                                         )
-                                      : SizedBox(),
+                                      : SizedBox( ),
                 ),
               ],
             ),
