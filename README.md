@@ -1,4 +1,4 @@
-<h1>Screenshots<h1>
+<h1>Screenshots and Documentations<h1>
    <h3>Screen 1<h3>
       <p align = center >
          <img src = "https://github.com/heyprincesingh/PlotLine_Mobile/blob/master/githubScreenshots/SplashScreen.jpg" height = "300">
@@ -13,19 +13,21 @@
          <img src = "https://github.com/heyprincesingh/PlotLine_Mobile/blob/master/githubScreenshots/button3%20deleted.jpg" height = "300">
          <img src = "https://github.com/heyprincesingh/PlotLine_Mobile/blob/master/githubScreenshots/screen2Video.gif" height = "300">
       </p>
-
+<br><br>
+         
 # Tasks Completed
 
-✅ Ability to set the target element, style and text of the tooltip. <br>
-✅ A preview of a mobile screen with button elements. <br>
-✅ The tooltip component should be built and positioned without using any additional library. <br>
-✅ The tooltip works seamlessly for buttons at any location of the mobile screen preview. <br>
-✅ Ability to include an image inside tooltip. (Added inputs for styling in screen 1). <br>
+✅ Ability to `set the target element`, `style` and `text` of the tooltip. <br>
+✅ A `preview` of a mobile screen with button elements. <br>
+✅ The tooltip `works seamlessly` for buttons at any location of the mobile screen preview. <br>
+✅ Ability to `include an image` inside tooltip. (Added inputs for styling in screen 1). <br>
+
+✅ Added `local database` to save to tooltips data.<br>
 
 ## Additional Features
-✅ Real-Time Tooltip preview on Screen 1. <br>
-✅ Added Splash Screen (Loading Screen with Plotline icon). <br>
-✅ Added Application Icon (Loading Screen with Plotline icon). <br>
+✅ Added `Real-Time Tooltip preview` on Screen 1. <br>
+✅ Added `Splash Screen` (Loading Screen with Plotline icon). <br>
+✅ Added `Application Icon` (Loading Screen with Plotline icon). <br>
  <br> <br>
 # Plotline Mobile App Documentation
 
@@ -43,7 +45,8 @@
    - **Description:** A Flutter plugin that enables reading and writing of simple key-value pairs to persistent storage on the device using shared preferences.
    - **Usage:** Offers data persistence across app launches, making it useful for storing and retrieving user preferences and small data sets.
 
- <br> <br>
+ <br>
+ 
 ## Main Components
 
 ### `main.dart`
@@ -74,7 +77,7 @@ Key Functions and Components:
 - `tooltipUpTriangle` and `tooltipDownTriangle` classes: Custom painters for drawing tooltip triangles.
 - `Obx`: Observes changes in controller's `i` and `data` fields to display tooltips dynamically based on button interactions.
 
-## `buttonScreenController.dart`
+### `buttonScreenController.dart`
 
 The `buttonScreenController.dart` file contains the GetX controller class managing the tooltip rendering screen.
 
